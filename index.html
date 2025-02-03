@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpaca</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.scss">
+</head>
+<body class="body">
+  <header class="header">
+    <a href="#" class="logo header__logo">
+      <img src="./public/img/logo.svg" alt="logo" class="logo__img">
+    </a>
+    <nav class="header__menu">
+      <ul class="menu">
+        <li class="menu__item"><a class="menu__link" href="#">Главная</a></li>
+        <li class="menu__item menu__item_parent item menu__item_arrow-hover_bottom">
+          <div class="submenu-title menu__link"><span>Основное меню</span></div>
+          <ul class="submenu submenu_bottom">
+            <li class="submenu__item"><a href="#" class="submenu__link">Заказать вёрстку</a></li>
+            <li class="submenu__item"><a href="#" class="submenu__link">Отправить макет на проверку</a></li>
+            <li class="submenu__item"><a href="#" class="submenu__link">Хочу работать у вас</a></li>
+            <li class="submenu__item menu__item_parent item menu__item_arrow-hover_right">
+              <div class="submenu-title submenu__link"><span>Есть предложение по работе с клиентами</span></div>
+              <ul class="submenu submenu_right">
+                <li class="submenu__item"><a href="#" class="submenu__link">У меня есть оффер</a></li>
+                <li class="submenu__item"><a href="#" class="submenu__link">Сделать партнёром</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="menu__item"><a class="menu__link" href="#">Наши сервисы</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Контакты</a></li>
+      </ul>
+    </nav>
+    <a class="header__phone" href="tel:+13212223333"><span>+1 (321) 222 - 33 - 33</span></a>
+    <div class="header__burger"></div>
+  </header>
+  <main class="page"></main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

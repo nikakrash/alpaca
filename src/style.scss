@@ -1,0 +1,475 @@
+$header-height: 8rem;
+
+html {
+  font-size: calc(1vw / 1.44) ;
+}
+
+.body {
+  margin: 0;
+  font-family: "Roboto", serif;
+  font-weight: 400;
+}
+
+.page {
+  height: calc(100vh - $header-height);
+  background: url(../public/img/alpaca.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.header {
+  background: #131417;
+  height: $header-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 calc(50% - 59.8rem);
+
+  &__phone {
+    position: relative;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8rem 0.8rem 0.8rem 3.5rem;
+    font-weight: 500;
+  
+    &:before {
+      position: absolute;
+      content: '';
+      width: 2.4rem;
+      height: 2.4rem;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background: url(../public/img/phone-icon.svg) no-repeat;
+      background-size: contain;
+    }
+  }
+  
+  &__burger {
+    display: none;
+  }
+}
+
+.logo {
+  &__img {
+    width: 4.6rem;
+    height: 4.6rem;
+  }
+}
+
+.menu {
+  display: flex;
+  gap: 4rem;
+  list-style-type: none;
+  padding-left: 6rem;
+  margin: 0;
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+}
+
+.menu__item {
+  padding: 2.8rem 1.8rem;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  color: #FAFAFA;
+  transition: .2s ease;
+
+  &_parent {
+    position: relative;
+  }
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  list-style-type: none;
+
+  &__item {
+    padding: 0.8rem 1rem 0.7rem 1.8rem;
+    background: #252830;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: .2s ease;
+    
+    &:last-child {
+      border: none;
+      padding-bottom: 0.8rem;
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: #FAFAFA;
+    text-decoration: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    &.submenu-title {
+      padding-right: 2.5rem;
+    }
+  }
+
+  &_bottom {
+    top: 8rem;
+    left: 0;
+    padding: 0;
+    width: 32rem;
+  
+    &:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 4.7rem;
+      transform: translateY(-100%);
+      width: 0;
+      height: 0;
+      border-left: 1.4rem solid transparent;
+      border-right: 1.4rem solid transparent;
+      border-bottom: 1.4rem solid #252830;
+    }
+  
+    & .submenu__item:last-child {
+      border-radius: 0 0 0.8rem 0.8rem;
+    }
+  }
+
+  &_right {
+    top: -3.9rem;
+    right: -0.2rem;
+    transform: translateX(100%);
+    width: 17.9rem;
+    border-radius: 0.8rem;
+    padding-left: 2rem;
+  
+    &:before {
+      position: absolute;
+      content: "";
+      top: 4.5rem;
+      left: -0.8rem;
+      transform: translateX(100%);
+      width: 0;
+      height: 0;
+      border-top: 1.4rem solid transparent;
+      border-bottom: 1.4rem solid transparent;
+      border-right: 1.4rem solid #252830;
+    }
+  
+    & .submenu__item:first-child {
+      border-top-left-radius: 0.8rem;
+      border-top-right-radius: 0.8rem;
+    }
+  
+    & .submenu__item:last-child {
+      border-bottom-left-radius: 0.8rem;
+      border-bottom-right-radius: 0.8rem;
+    }
+  }
+}
+
+.submenu-title {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: calc(50% - 0.3rem);
+    right: -1.7rem;
+    width: 0;
+    height: 0;
+    border-left: .4rem solid transparent;
+    border-right: .4rem solid transparent;
+    border-top: .6rem solid #F2994A;
+    transition: .2s ease;
+  }
+}
+
+@media (hover: hover) {
+  .menu__item {
+    &:hover {
+      cursor: pointer;
+      color: #EB5757;
+    }
+
+    &_parent:hover > .submenu {
+      display: block;
+    }
+
+    &_arrow-hover_bottom:hover > .submenu-title::after {
+      transform: rotate(180deg);
+    }
+  
+    &_arrow-hover_right {
+      &:hover > .submenu-title::after {
+        transform: rotate(-90deg);
+      }
+
+      & .submenu-title::after {
+        position: absolute;
+        content: "";
+        top: calc(50% - 0.2rem);
+        right: 0.9rem;
+        width: 0;
+        height: 0;
+        border-left: 0.4rem solid transparent;
+        border-right: 0.4rem solid transparent;
+        border-top: 0.6rem solid #F2994A;
+        transition: 0.2s ease;
+      }
+    }
+  }
+
+  .submenu__item:hover {
+    background: #131417;
+  }
+}
+
+@media(min-width: 1441px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media(max-width: 992px) {
+  html {
+    font-size: 10px;
+  }
+
+  .body.menu-open {
+    overflow: hidden;
+
+    & .page {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(19, 20, 23, 0.5);
+      }
+    }
+  }
+
+  .page {
+    height: 94.4rem;
+  }
+
+  .header {
+    padding: 0 2.2rem;
+    
+    &__burger {
+      display: block;
+      position: relative;
+      width: 2.2rem;
+      height: 1.4rem;
+      background: url(../public/img/burger-icon.svg) no-repeat;
+      background-size: contain;
+    }
+
+    &__menu {
+      display: none;
+      position: absolute;
+      transform: translateX(100%);
+      top: 8rem;
+      right: 0;
+      background: #131417;
+      min-height: calc(100vh - $header-height);
+      transition: .2s ease;
+      z-index: 1;
+      animation: open-menu .2s ease;
+
+      &.show {
+        display: block;
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    &__phone {
+      padding-left: 1.8rem;
+
+      &:before {
+        left: -1.6rem;
+      }
+    }
+  }
+
+  @keyframes open-menu {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .menu {
+    display: block;
+    background: #252830;
+    width: 37.4rem;
+    padding: 0;
+
+    &__item {
+      padding: 0;
+
+      &_arrow-hover_right {
+        padding-right: 0 !important;
+      }
+    }
+
+    &__link {
+      padding: 2rem;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .submenu-title {
+    &.show {
+      background: #131417;
+
+      & + .submenu {
+        display: block;
+      }
+
+      & span::after {
+        transform: rotate(180deg);
+      }
+    }
+
+    & span {
+      position: relative;
+    }
+
+    & span::after {
+      position: absolute;
+      content: "";
+      top: calc(50% - 0.3rem);
+      right: -1.6rem;
+      width: 0;
+      height: 0;
+      border-left: 0.4rem solid transparent;
+      border-right: 0.4rem solid transparent;
+      border-top: 0.6rem solid #F2994A;
+      transition: 0.2s ease;
+    }
+  }
+
+  .menu__item_submenu-parent .submenu__link {
+    position: relative;
+
+    &::after {
+      display: none;
+    }
+
+    & span {
+      position: relative;
+    }
+
+    & span::after {
+      position: absolute;
+      content: "";
+      top: calc(50% - 0.3rem);
+      right: -2rem;
+      width: 0;
+      height: 0;
+      border-left: 0.4rem solid transparent;
+      border-right: 0.4rem solid transparent;
+      border-top: 0.6rem solid #F2994A;
+      transition: 0.2s ease;
+    }
+  }
+
+  .submenu {
+    position: static;
+    width: 100%;
+    padding: 0;
+
+    &__item {
+      padding: 0;
+      border: none;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      & .submenu__link {
+        padding: 2rem;
+        padding-bottom: 1.9rem;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    &_bottom li {
+      width: 100%;
+    }
+
+    &.show {
+      display: block;
+    }
+
+    &_right {
+      width: 100%;
+      transform: none;
+    }
+
+    &:before {
+      display: none;
+    }
+  }
+}
+
+@media(max-width: 375px) {
+  .page {
+    background-position: 30%;
+  }
+
+  .header {
+    padding: 0 2rem;
+
+    &__phone {
+      padding: 0;
+      width: 2.4rem;
+      height: 2.4rem;
+      right: 6.5rem;
+      position: absolute;
+
+      &::before {
+        left: -0.5rem;
+      }
+
+      & span {
+        display: none;
+      }
+    }
+  }
+
+  .menu__link {
+    padding-left: 1.8rem;
+  }
+
+  .submenu__item .submenu__link {
+    padding: 2rem 2rem 2rem 1.8rem;
+  }
+}
